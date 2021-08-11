@@ -69,11 +69,11 @@ Create Procfile in root of project
 
 - touch Procfile
 
-* write: 'web: gunicorn myproject.wsgi'
+* echo "web: gunicorn myproject.wsgi" >> Procfile
 
 Install django_heroku
 
 - pipenv install django_heroku
 
 * Import in settings.py
-* configurations inside settings.py: django_heroku.settings(locals()) -> place at the bottom
+* configurations inside settings.py django_heroku.settings(locals()) -> place at the bottom
