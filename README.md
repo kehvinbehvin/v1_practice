@@ -49,6 +49,31 @@ Create admin user
 
 * I usually use name: admin, password: pw
 
-Initiate git
+Enabling cors
+
+- pipenv install django-cors-headers
+
+* Remember to add 'corsheaders' to settings.py at installed apps
+* Remember to add 'corsheaders.middleware.CorsMiddleware' to settings.py at middleware...
+* ...above 'commonMiddleWare'
+
+Initiate git and commit
 
 - git init
+
+Install gunicorn
+
+- pipenv install gunicorn
+
+Create Procfile in root of project
+
+- touch Procfile
+
+* write: 'web: gunicorn myproject.wsgi'
+
+Install django_heroku
+
+- pipenv install django_heroku
+
+* Import in settings.py
+* configurations inside settings.py: django_heroku.settings(locals()) -> place at the bottom
