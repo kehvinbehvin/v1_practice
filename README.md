@@ -69,7 +69,7 @@ Create Procfile in root of project
 
 - touch Procfile
 
-* echo "web: gunicorn myproject.wsgi" >> Procfile
+- echo "web: gunicorn myproject.wsgi" >> Procfile
 
 Install django_heroku
 
@@ -98,3 +98,8 @@ Workflow:
 2. All work to be done and pushed to the main branch
 3. Only when app is ready for deployment, admin will git push to production branch
    (this will deploy on heroku automatically)
+   For admin:
+   1. git pull master branch
+   2. git switch production
+   3. git merge master
+   4. git push - u origin master:production
