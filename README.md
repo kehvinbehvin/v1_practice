@@ -30,12 +30,31 @@ Install Django REST Framework
 
 * Remember to add rest_framework to settings.py file in main project
 
+Install dotenv for .env for Django's Secret Key
+
+- pipenv install python-dotenv
+- touch .env
+
+* add SECRET_KEY value to your .env file
+* Remember to add SECRET_KEY to your config vars/ env vars in your heroku/vercel
+
+* Remember to add
+  '''
+  import os
+  from dotenv import load_dotenv
+
+  load_dotenv()
+  SECRET_KEY = os.getenv('SECRET_KEY')
+  '''
+
 Install Prostgres adapter for python -> psycopg2
 
-- pipenv install psycopg2
+- Note that this is only for MacOS
 
-* Remember to configure Database engine and name in settings.py file in main project
-* Configure a local db for your project so that you have a local database to play with
+* pipenv install psycopg2
+
+- Remember to configure Database engine and name in settings.py file in main project
+- Configure a local db for your project so that you have a local database to play with
   - 'ENGINE': 'django.db.backends.postgresql_psycopg2'
   - 'NAME': 'your_db_name'
 
@@ -68,15 +87,17 @@ Install gunicorn
 Create Procfile in root of project
 
 - touch Procfile
-
+- echo "release: python manage.py migrate"
 - echo "web: gunicorn myproject.wsgi" >> Procfile
 
 Install django_heroku
 
-- pipenv install django_heroku
+- Note that this is only for MacOS
 
-* Import in settings.py
-* configurations inside settings.py django_heroku.settings(locals()) -> place at the bottom
+* pipenv install django_heroku
+
+- Import in settings.py
+- configurations inside settings.py django_heroku.settings(locals()) -> place at the bottom
 
 Create Heroku App in CLI
 
