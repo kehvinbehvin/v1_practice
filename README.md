@@ -87,3 +87,14 @@ Push to heroku for deployment
 
 - git push heroku master
   (master or main depends on your git settings)
+
+- Add a new branch for production in github
+
+- Connect your github to heroku and choose the production branch for your automatic deployment
+
+Workflow:
+
+1. Everyone other than admin git clones the main branch
+2. All work to be done and pushed to the main branch
+3. Only when app is ready for deployment, admin will git push to production branch
+   (this will deploy on heroku automatically)
