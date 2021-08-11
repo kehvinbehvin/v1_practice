@@ -77,3 +77,13 @@ Install django_heroku
 
 * Import in settings.py
 * configurations inside settings.py django_heroku.settings(locals()) -> place at the bottom
+
+Create Heroku App in CLI
+
+- heroku create
+  (When a heroku app is created a remote repo is automatially created for you and is added to your git)
+
+Push to heroku for deployment
+
+- git push heroku master
+  (master or main depends on your git settings)
